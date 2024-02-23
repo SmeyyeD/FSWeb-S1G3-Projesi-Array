@@ -176,15 +176,13 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 
 
 function ismeGoreFiltrele(tatlar, lezzet) {
-  let filtrelenmisTatlar = [];
-
+  let sonuc = [];
   for (let i = 0; i < tatlar.length; i++) {
     if (tatlar[i].includes(lezzet)) {
-      filtrelenmisTatlar.push(tatlar[i]);
+      sonuc.push(tatlar[i]);
     }
   }
-
-  return filtrelenmisTatlar;
+return sonuc;
 }
 
 
@@ -202,9 +200,21 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/){
-  /*kod buraya*/
+function ortalamaKelimeSayisi(dizi){
+  let toplamKelimeSayisi = 0;
+  for ( let i = 0; i < dizi.length; i++) {
+    let kelimeSayisi = 1;
+    for( let harf of dizi[i]) {
+      if( harf == " ") {
+        kelimeSayisi++
+      }
+    }
+    toplamKelimeSayisi = toplamKelimeSayisi + kelimeSayisi
+  }
+  let sonuc = toplamKelimeSayisi / dizi.length;
+  return sonuc;
 }
+console.log(ortalamaKelimeSayisi(orijinalTatlar));
 
 
 /* ALIŞTIRMA 2:
